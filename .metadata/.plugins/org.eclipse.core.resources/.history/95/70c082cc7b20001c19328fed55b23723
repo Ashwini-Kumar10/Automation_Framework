@@ -1,0 +1,40 @@
+package pageObject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import elements.BaseElement;
+import elements.TextBox;
+
+public class LoginPage extends BasePage{
+	
+	private TextBox userName=null;
+	private TextBox password=null;
+	
+	public TextBox userName()
+	{
+		return new TextBox(BaseElement.SelectBy.id,"");
+		
+	}
+	
+	public void launchBrowser()
+	{
+		
+		System.setProperty("webdriver.driver.chrome", "C:\\Users\\Dyanda\\Desktop\\Interview\\interview\\src\\main\\resources\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com");
+	}
+
+	@Override
+	void navigateTo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	boolean isOpen(String uniqueLocator) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

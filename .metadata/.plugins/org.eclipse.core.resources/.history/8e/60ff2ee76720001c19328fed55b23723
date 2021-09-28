@@ -1,0 +1,16 @@
+package pageObject;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginPage {
+	
+	public void launchBrowser()
+	{
+		
+		System.setProperty("webdriver.driver.chrome", "C:\\Users\\Dyanda\\Desktop\\Interview\\interview\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com");
+	}
+
+}

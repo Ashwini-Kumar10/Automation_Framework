@@ -1,0 +1,64 @@
+package elements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import webDriverFactory.WebDriverFactory;
+
+public class BaseElement {
+	
+	public enum SelectBy{className,cssSelector,id,linkText,partialLinkText,tagName,xPath}
+	protected SelectBy locatorType;
+	protected String locatorValue;
+	
+	public SelectBy getLocatorType()
+	{
+		return locatorType;
+	}
+	
+	public void setLocatorType(SelectBy LocatorType)
+	{
+		locatorType=LocatorType;
+	}
+	
+	public String getLocatorValue()
+	{
+		return locatorValue;
+	}
+	
+	public void setLocatorValue(String LocatorValue)
+	{
+		locatorValue=LocatorValue;
+	}
+	
+	public WebElement findElement()
+	{
+		WebElement element =null;
+		WebDriverFactory wdf=new WebDriverFactory();
+		switch(locatorType) 
+		{
+		
+			case className:
+				element=wdf.getCurrentWebDriver().findElement(By.className(locatorValue));
+				break;
+			case cssSelector:
+				element=wdf.getCurrentWebDriver().findElement(By.className(locatorValue));
+				break;
+			default:
+					//do nothing
+				break;
+		}
+		return null;
+	}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}

@@ -1,0 +1,5 @@
+Feature: Login Page Validation
+
+  @tag1
+  Scenario: Successful Login
+    Given User is on "LoginPage"

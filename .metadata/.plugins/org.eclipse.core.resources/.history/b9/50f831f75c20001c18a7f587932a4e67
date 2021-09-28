@@ -1,0 +1,6 @@
+Feature: Login Page Validation
+
+  @tag1
+  Scenario: Successful Login 
+    Given I want to write a step with precondition
+
