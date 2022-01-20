@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
     
     features={"src/test/resources/features"},
     glue= {"stepDefinition"},
-    
+    //dryRun=true,
     monochrome=true
     )
 

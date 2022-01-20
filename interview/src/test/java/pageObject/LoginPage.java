@@ -45,6 +45,7 @@ public class LoginPage extends BasePage{
 		WebDriverFactory wdf=new WebDriverFactory();
 		wdf.instantiateBrowser();
 		wdf.getCurrentWebDriver().get("https://www.facebook.com");
+		System.out.println("Ashwini");
 		
 		
 		
@@ -52,7 +53,7 @@ public class LoginPage extends BasePage{
 
 	@Override
 	public void navigateTo() {
-		launchBrowser();
+		//launchBrowser();
 		
 	}
 

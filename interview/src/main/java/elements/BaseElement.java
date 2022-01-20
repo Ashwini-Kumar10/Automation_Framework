@@ -68,9 +68,6 @@ public class BaseElement {
 		}
 		return element;
 	}
-		
-		
-		
 	}
 	
 	
