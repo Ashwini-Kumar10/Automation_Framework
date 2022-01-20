@@ -18,7 +18,7 @@ public class BaseElement {
 	
 	public void setLocatorType(SelectBy LocatorType)
 	{
-		locatorType=LocatorType;
+		this.locatorType=LocatorType;
 	}
 	
 	public String getLocatorValue()
@@ -28,7 +28,7 @@ public class BaseElement {
 	
 	public void setLocatorValue(String LocatorValue)
 	{
-		locatorValue=LocatorValue;
+		this.locatorValue=LocatorValue;
 	}
 	
 	public WebElement findElement()

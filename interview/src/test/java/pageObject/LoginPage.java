@@ -3,6 +3,7 @@ package pageObject;
 import elements.BaseElement;
 import elements.Button;
 import elements.TextBox;
+import utility.FileHelper;
 import webDriverFactory.WebDriverFactory;
 
 public class LoginPage extends BasePage{
@@ -34,26 +35,16 @@ public class LoginPage extends BasePage{
 	
 	public void launchBrowser()
 	{
-		
-		/*
-		 * System.setProperty("webdriver.driver.chrome",
-		 * "C:\\Users\\Dyanda\\Desktop\\Interview\\interview\\src\\main\\resources\\Drivers\\chromedriver.exe"
-		 * ); WebDriver driver=new ChromeDriver();
-		 * driver.get("https://www.facebook.com");
-		 */
-		
 		WebDriverFactory wdf=new WebDriverFactory();
 		wdf.instantiateBrowser();
-		wdf.getCurrentWebDriver().get("https://www.facebook.com");
-		System.out.println("Ashwini");
-		
-		
+		String applicationName=FileHelper.readConfigValue("Application");
+		wdf.getCurrentWebDriver().get(applicationName);
 		
 	}
 
 	@Override
 	public void navigateTo() {
-		//launchBrowser();
+		launchBrowser();
 		
 	}
 
