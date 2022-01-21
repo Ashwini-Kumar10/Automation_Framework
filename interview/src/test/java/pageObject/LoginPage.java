@@ -12,6 +12,7 @@ public class LoginPage extends BasePage{
 	private TextBox password=null;
 	private Button login=null;
 	
+	
 	public TextBox UserName()
 	{
 		userName=new TextBox(BaseElement.SelectBy.id,"email");
@@ -38,22 +39,23 @@ public class LoginPage extends BasePage{
 		WebDriverFactory wdf=new WebDriverFactory();
 		wdf.instantiateBrowser();
 		String applicationName=FileHelper.readConfigValue("Application");
-		wdf.getCurrentWebDriver().get(applicationName);
+		WebDriverFactory.getCurrentWebDriver().get(applicationName);
 		
 	}
 
 	@Override
 	public void navigateTo() {
 		launchBrowser();
-		
+	}
+	
+	public void login()
+	{
+		UserName().sendKeys(FileHelper.readConfigValue("UserName"));
+		Password().sendKeys(FileHelper.readConfigValue("Password")); 
+		Login().click();
+		 
 	}
 
-	@Override
-	boolean isOpen(String uniqueLocator) {
-		
-		
-		// TODO Auto-generated method stub
-		return false;
-	}
+
 
 }

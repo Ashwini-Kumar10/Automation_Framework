@@ -14,6 +14,7 @@ public class UniversalController {
 		Object classObject=null;
 		Method method=null;
 		String absolutePageName="pageObject."+pageName;
+		System.out.println(absolutePageName);
 		try {
 			classObject=Class.forName(absolutePageName).newInstance();
 		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
@@ -22,6 +23,7 @@ public class UniversalController {
 		}
 		try {
 			 method=Class.forName(absolutePageName).getDeclaredMethod("navigateTo");
+			 System.out.println(method.getName());
 			
 		} catch (NoSuchMethodException | SecurityException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -33,16 +35,7 @@ public class UniversalController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		//System.out.format("Thread ID - %2d -%s from %s feature file.\n", Thread.currentThread().getId(),pageName,pageName);
-		/*
-		 * Class<?> pageClass = ("pageObject."+pageName).getClass(); Object xyz =
-		 * Class.forName("pageObject."+pageName).newInstance(); String
-		 * className=pageClass.getName(); System.out.println(className); Method method =
-		 * pageClass.getDeclaredMethod("navigateTo"); Object returnv=method.invoke(xyz);
-		 */
-		
-		  //LoginPage lp=new LoginPage(); lp.navigateTo();
+	
 		 
 	}
 	

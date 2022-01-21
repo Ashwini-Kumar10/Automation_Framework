@@ -8,7 +8,7 @@ import utility.FileHelper;
 
 public class WebDriverFactory {
 
-	WebDriver driver;
+	static WebDriver driver;
 	
 	public void instantiateBrowser()
 	{
@@ -34,7 +34,7 @@ public class WebDriverFactory {
 		}
 	}
 	
-	public WebDriver getCurrentWebDriver()
+	public static WebDriver getCurrentWebDriver()
 	{
 		return driver;
 	}

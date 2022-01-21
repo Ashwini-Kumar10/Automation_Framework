@@ -34,33 +34,33 @@ public class BaseElement {
 	public WebElement findElement()
 	{
 		WebElement element =null;
-		WebDriverFactory wdf=new WebDriverFactory();
+		
 		switch(locatorType) 
 		{
 		
 			case className:
-				element=wdf.getCurrentWebDriver().findElement(By.className(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.className(locatorValue));
 				break;
 			case cssSelector:
-				element=wdf.getCurrentWebDriver().findElement(By.cssSelector(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.cssSelector(locatorValue));
 				break;
 			case id:
-				element=wdf.getCurrentWebDriver().findElement(By.id(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.id(locatorValue));
 				break;
 			case linkText:
-				element=wdf.getCurrentWebDriver().findElement(By.linkText(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.linkText(locatorValue));
 				break;
 			case partialLinkText:
-				element=wdf.getCurrentWebDriver().findElement(By.partialLinkText(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.partialLinkText(locatorValue));
 				break;
 			case tagName:
-				element=wdf.getCurrentWebDriver().findElement(By.tagName(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.tagName(locatorValue));
 				break;
 			case xPath:
-				element=wdf.getCurrentWebDriver().findElement(By.xpath(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.xpath(locatorValue));
 				break;
 			case name:
-				element=wdf.getCurrentWebDriver().findElement(By.name(locatorValue));
+				element=WebDriverFactory.getCurrentWebDriver().findElement(By.name(locatorValue));
 				break;
 			default:
 					//do nothing
